@@ -1,4 +1,4 @@
-# MTG_booster_constructor
+# Magic-The-Gathering-booster-constructor
 A simple Python script to calculate how many Magic: the Gathering booster can be build and how many cards of each rarity are missing to build additional booster.
 
 Based on the number of rares, uncommons & commons, it is calculated how many booster can be build right now, based on the given ratios between the three rarities.
