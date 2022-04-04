@@ -8,13 +8,12 @@ Created on Sun Apr  3 13:11:29 2022
 import itertools
 import numpy as np
 from matplotlib import pyplot as plt
+from matplotlib.ticker import MaxNLocator
 
 #------------------------------------------------------------------------------
 # input
 
-dices = [6,6]
-
-# dices = [2,2,2]
+dices = [6,6,20]
 
 #------------------------------------------------------------------------------
 # calculation
@@ -29,4 +28,12 @@ eyesum = []
 for combination in combinations:
     eyesum.append(sum(combination))
 
-plt.hist(eyesum, bins=np.arange(min(eyesum)-3,len(set(eyesum))+2)+1.5, density=True, rwidth=0.9)
+#------------------------------------------------------------------------------
+# plot
+
+ax = plt.figure().gca()
+plt.hist(eyesum, bins=np.arange( min(eyesum), min(eyesum)+len(set(eyesum))+1, 1 ) - 0.5, density=True, rwidth=0.8)
+plt.title('probabilities of eyesums')
+plt.xlabel('eye sum')
+plt.ylabel('probability')
+ax.xaxis.set_major_locator(MaxNLocator(integer=True))
