@@ -35,12 +35,15 @@ eyesum = []
 for combination in combinations:
     eyesum.append(sum(combination))
 
+# probability distribution
+N = np.histogram(eyesum, bins = np.arange( min(eyesum), min(eyesum) + len(set(eyesum)) + 1, 1 ), density=True)
+
 #------------------------------------------------------------------------------
 # plot
 
 ax = plt.figure().gca()
-plt.hist(eyesum, bins=np.arange( min(eyesum), min(eyesum)+len(set(eyesum))+1, 1 ) - 0.5, density=True, rwidth=0.8)
+plt.bar(N[1][:-1], N[0], width=0.8)
 plt.title('probabilities of eyesums')
 plt.xlabel('eye sum')
 plt.ylabel('probability')
-ax.xaxis.set_major_locator(MaxNLocator(integer=True))
+ax.xaxis.set_major_locator(MaxNLocator(integer=True))   # integer ticks
