@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 plots the probability distribution of 
-the eye sum of arbitrary many, arbitrary sided die
+the eye sum of arbitrary many, arbitrary sided dice
 
 Created on Sun Apr  3 13:11:29 2022
 
@@ -16,16 +16,16 @@ from matplotlib.ticker import MaxNLocator
 #------------------------------------------------------------------------------
 # input
 
-# list of die; e.g. [6,6,20]: two 6-sided die, one 20-sided dice
-die = [6,6,20]
+# list of dice; e.g. [6,6,20]: two 6-sided dice, one 20-sided die
+dice = [6,6,20]
 
 #------------------------------------------------------------------------------
 # calculation
 
-# list of lists of all possible eyes for each dice
+# list of lists of all possible eyes for each die
 eyes = []
-for dice in die:
-    eyes.append( [eye+1 for eye in range(dice)] )
+for die in dice:
+    eyes.append( [eye+1 for eye in range(die)] )
 
 # all possible result combinations
 combinations = list(itertools.product(*eyes))
