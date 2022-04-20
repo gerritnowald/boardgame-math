@@ -44,12 +44,12 @@ plt.style.use('dark_background')
 
 ax = plt.figure().gca()
 plt.bar(N[1][:-1], N[0]*100, width=0.8, color='gold' )
-plt.title('probabilities of eyesums')
+plt.title(f'probabilities of eye totals, dice: {dice}')
 plt.xlabel('eye sum')
 plt.ylabel('probability / %')
 ax.xaxis.set_major_locator(MaxNLocator(integer=True))   # integer ticks
 
 plt.tight_layout()
 
-plt.show()
-# plt.savefig(f'probability_{dice}.png', transparent=True)
+# plt.show()
+plt.savefig(f'probability_{dice}.png', transparent=True)
